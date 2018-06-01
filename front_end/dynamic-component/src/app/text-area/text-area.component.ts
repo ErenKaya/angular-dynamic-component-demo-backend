@@ -7,8 +7,10 @@ import { iasHtmlTextArea } from '../ias-html-text-area';
   styleUrls: ['./text-area.component.css']
 })
 export class TextAreaComponent implements OnInit {
-
-  constructor(textArea: iasHtmlTextArea) { }
+  textArea: string;
+  constructor(textArea: iasHtmlTextArea) {
+    this.textArea = '<input type="text"   value="'+textArea.textArea+'" style="position: absolute; left:'+textArea.x+'px;top:'+textArea.y+'px;">'+textArea.caption+'</input><br>' 
+   }
 
   ngOnInit() {
   }

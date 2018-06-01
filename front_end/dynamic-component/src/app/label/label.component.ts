@@ -8,8 +8,10 @@ import { iasHtmlLabel } from '../ias-html-label';
   styleUrls: ['./label.component.css']
 })
 export class LabelComponent implements OnInit {
-
-  constructor(label: iasHtmlLabel ) { }
+  labelString: string;
+  constructor(label: iasHtmlLabel ) { 
+    this.labelString = '<label name="'+label.text+'"  style="position: absolute; left: '+label.x+'px; top: '+label.y+'px; ">'+label.caption+'</label>'
+  }
 
   ngOnInit() {
   }

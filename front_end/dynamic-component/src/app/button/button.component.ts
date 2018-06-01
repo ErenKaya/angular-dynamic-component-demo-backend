@@ -7,8 +7,10 @@ import { iasHtmlButton } from '../ias-html-button';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-
-  constructor(buton: iasHtmlButton) { }
+  buttonString: string;
+  constructor(button: iasHtmlButton) {
+    this.buttonString = '<button name="'+button.buttonColor+'" type="button" style="position:absolute; left: '+ button.x +'px; top: ' + button.y+'px;  ">'+button.caption+'</button>';
+   }
 
   ngOnInit() {
   }
