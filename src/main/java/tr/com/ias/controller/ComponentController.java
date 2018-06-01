@@ -28,24 +28,24 @@ public class ComponentController {
 		return new ResponseEntity<>(componentList, HttpStatus.OK);
 	}
 
-
 	public void generateComponent(int componentCount, List<iasHtmlComponent> componentList) {
 
 		for (Integer i = 0; i < componentCount; i++) {
 			int componentType = ThreadLocalRandom.current().nextInt(0, ComponentType.values().length + 1);
 			iasHtmlComponent component;
+			Integer labelIdentifier = i;
 			switch (componentType) {
 			case 0:
-				component = generateLabel(i);
+				component = generateLabel(labelIdentifier);
 				break;
 			case 1:
-				component = generateTextField(i);
+				component = generateTextField(labelIdentifier);
 				break;
 			case 2:
-				component = generateButton(i);
+				component = generateButton(labelIdentifier);
 				break;
 			default:
-				component = generateLabel(i);
+				component = generateLabel(labelIdentifier);
 				break;
 			}
 
@@ -53,8 +53,7 @@ public class ComponentController {
 		}
 	}
 
-	public iasHtmlComponent generateLabel(Integer i) {
-		Integer labelIdentifier = i;
+	public iasHtmlLabel generateLabel(Integer labelIdentifier) {
 		labelIdentifier++;
 		iasHtmlLabel label = new iasHtmlLabel();
 		label.setCaption("Label " + labelIdentifier);
@@ -62,11 +61,11 @@ public class ComponentController {
 		label.setX(labelIdentifier * 1);
 		label.setZ(labelIdentifier * 1);
 		label.setY(labelIdentifier * 1);
+		label.setComponentType(ComponentType.LABEL);
 		return label;
 	}
 
-	public iasHtmlComponent generateButton(int i) {
-		Integer buttonIdentifier = i;
+	public iasHtmlButton generateButton(Integer buttonIdentifier) {
 		buttonIdentifier++;
 		iasHtmlButton button = new iasHtmlButton();
 		button.setCaption("Button " + buttonIdentifier);
@@ -74,18 +73,19 @@ public class ComponentController {
 		button.setX(buttonIdentifier * 2);
 		button.setZ(buttonIdentifier * 2);
 		button.setY(buttonIdentifier * 2);
+		button.setComponentType(ComponentType.BUTTON);
 		return button;
 	}
 
-	public iasHtmlComponent generateTextField(int i) {
-		Integer textFieldIdentifier = i;
+	public iasHtmlTextField generateTextField(Integer textFieldIdentifier) {
 		textFieldIdentifier++;
 		iasHtmlTextField textField = new iasHtmlTextField();
 		textField.setCaption("TextField " + textFieldIdentifier);
-		textField.setTextArea("TextArea " + textFieldIdentifier);
+		textField.setTextArea("TextField1 " + textFieldIdentifier);
 		textField.setX(textFieldIdentifier * 3);
 		textField.setZ(textFieldIdentifier * 3);
-		textField.setY(textFieldIdentifier	 * 3);
+		textField.setY(textFieldIdentifier * 3);
+		textField.setComponentType(ComponentType.TEXTFIELD);
 		return textField;
 	}
 

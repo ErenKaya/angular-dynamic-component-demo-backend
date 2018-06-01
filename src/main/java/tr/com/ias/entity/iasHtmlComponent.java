@@ -44,4 +44,14 @@ public abstract class iasHtmlComponent {
 		this.y = y;
 	}
 
+	public ComponentType getComponentType() {
+		return componentType;
+	}
+
+	public void setComponentType(ComponentType componentType) {
+		this.componentType = componentType;
+	}
+	
+	
+
 }
