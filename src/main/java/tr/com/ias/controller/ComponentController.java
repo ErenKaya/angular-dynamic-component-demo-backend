@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ import tr.com.ias.entity.iasHtmlTextField;
 public class ComponentController {
 
 	@RequestMapping(value = "/generate", method = RequestMethod.GET)
+	@CrossOrigin
 	public ResponseEntity<?> generateRandomComponent() {
 		int componentCount = ThreadLocalRandom.current().nextInt(1, 10 + 1);
 		List<iasHtmlComponent> componentList = new ArrayList<>();
