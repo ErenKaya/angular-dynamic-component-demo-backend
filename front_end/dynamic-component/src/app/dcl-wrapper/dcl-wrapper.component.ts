@@ -26,18 +26,42 @@ export class DclWrapperComponent {
     if (this.cmpRef) {
       this.cmpRef.destroy();
     }
-    var factory = null;
-    factory = this.componentFactoryResolver.resolveComponentFactory(this.comp);
+    let component = this.getComponentType(this.comp);
+    let factory = this.componentFactoryResolver.resolveComponentFactory(this.getComponentType(this.comp));
 
     this.cmpRef = this.target.createComponent(factory);
     // to access the created instance use
-    // this.compRef.instance.someProperty = 'someValue';
+    this.cmpRef.instance.e = this.comp;
     // this.compRef.instance.someOutput.subscribe(val => doSomething());
     this.cdRef.detectChanges();
   }
 
 
+   getComponentType(component: any): any{
 
+     if(component.componentType.value === 0){
+       return LabelComponent; 
+     }else if(component.componentType.value === 2){
+      return ButtonComponent;
+     }else if(component.componentType.value ===1){
+      return TextAreaComponent;
+     }
+    //  switch(component.componentType){
+    //    case 0:{
+    //      console.log("button döndü");
+    //      return ButtonComponent;
+    //      break;
+    //    }
+    //    case 1: {
+    //     console.log("button döndü");
+    //      return LabelComponent;
+    //      break;
+    //    }
+    //    case 2:
+    //    return TextAreaComponent;
+    //    break;
+    //  }
+  }
 
   ngOnChanges() {
     this.updateComponent();

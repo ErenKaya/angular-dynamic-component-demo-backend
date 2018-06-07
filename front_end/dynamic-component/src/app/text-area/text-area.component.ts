@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { iasHtmlTextArea } from '../ias-html-text-area';
 
 @Component({
@@ -9,9 +9,8 @@ import { iasHtmlTextArea } from '../ias-html-text-area';
 })
 
 export class TextAreaComponent   implements OnInit {
-  textArea: string;
-  constructor(textArea: iasHtmlTextArea) {
-    this.textArea = '<input type="text"   value="'+textArea.textArea+'" style="position: absolute; left:'+textArea.x+'px;top:'+textArea.y+'px;">'+textArea.caption+'</input><br>' 
+  @Input() e: TextAreaComponent;
+  constructor() {
    }
    
   ngOnInit() {

@@ -8,21 +8,19 @@ import { LabelComponent } from "../label/label.component";
 import { ButtonComponent } from "../button/button.component";
 import { TextAreaComponent } from "../text-area/text-area.component";
 import { CresolverComponent } from "../cresolver/cresolver.component";
+import { Button } from "protractor";
 
 @Component({
   selector: 'app-factory',
   templateUrl: './factory.component.html',
   styleUrls: ['./factory.component.css']
 })
-export class FactoryComponent implements OnInit {
+export class FactoryComponent  {
 
   getDataList: string;
   componentList: iasHtmlComponent[] = [];
   typeList: any[] = [];
   constructor(private iasGeneratorService: IasGeneratorService) { }
-
-  ngOnInit() {
-  }
 
   showComponents() {
     //Servis Bağlantısı Devre Dışı:
@@ -40,12 +38,12 @@ export class FactoryComponent implements OnInit {
     JSON.parse(this.getDataList).forEach(e => {
 
       if (e['componentType'] === "BUTTON") {
-        this.typeList.push(new ButtonComponent(new iasHtmlButton(e)));
-
+        this.typeList.push(new iasHtmlButton(e));
+        
       } else if (e['componentType'] === "LABEL") {
-        this.typeList.push(new LabelComponent(new iasHtmlLabel(e)));
+        this.typeList.push(new iasHtmlLabel(e));
       } else if (e['componentType'] === "TEXTFIELD") {
-        this.typeList.push(new TextAreaComponent(new iasHtmlTextArea(e)));
+        this.typeList.push(new iasHtmlTextArea(e));
       }
     });
 
