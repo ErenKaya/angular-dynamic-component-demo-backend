@@ -1,4 +1,4 @@
-package tr.com.ias;
+package tr.com.ias.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
