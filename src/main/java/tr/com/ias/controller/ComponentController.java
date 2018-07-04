@@ -25,6 +25,9 @@ import tr.com.ias.entity.table.iasHtmlTableRow;
 @RequestMapping(value = "/component")
 public class ComponentController {
 
+	private static final int MAX_METRICS = 500;
+	private static final int MIN_METRICS = 30;
+
 	@RequestMapping(value = "/generate", method = RequestMethod.GET)
 	@CrossOrigin
 	@Deprecated
@@ -125,8 +128,8 @@ public class ComponentController {
 		iasHtmlLabel label = new iasHtmlLabel();
 		label.setCaption("Label " + labelIdentifier);
 		label.setText("Label text " + labelIdentifier);
-		label.setX(labelIdentifier * 1);
-		label.setY(labelIdentifier * 1);
+		label.setX(labelIdentifier * getRandomMetrics());
+		label.setY(labelIdentifier * getRandomMetrics());
 		label.setComponentType(ComponentType.LABEL);
 		return label;
 	}
@@ -136,8 +139,8 @@ public class ComponentController {
 		iasHtmlButton button = new iasHtmlButton();
 		button.setCaption("Button " + buttonIdentifier);
 		button.setButtonColor("Button color" + buttonIdentifier);
-		button.setX(buttonIdentifier * 2);
-		button.setY(buttonIdentifier * 2);
+		button.setX(buttonIdentifier * getRandomMetrics());
+		button.setY(buttonIdentifier * getRandomMetrics());
 		button.setComponentType(ComponentType.BUTTON);
 		return button;
 	}
@@ -147,10 +150,14 @@ public class ComponentController {
 		iasHtmlTextField textField = new iasHtmlTextField();
 		textField.setCaption("TextField " + textFieldIdentifier);
 		textField.setTextArea("TextField1 " + textFieldIdentifier);
-		textField.setX(textFieldIdentifier * 3);
-		textField.setY(textFieldIdentifier * 3);
+		textField.setX(textFieldIdentifier * getRandomMetrics());
+		textField.setY(textFieldIdentifier * getRandomMetrics());
 		textField.setComponentType(ComponentType.TEXTFIELD);
 		return textField;
+	}
+
+	private Integer getRandomMetrics() {
+		return ThreadLocalRandom.current().nextInt(MIN_METRICS, MAX_METRICS);
 	}
 
 }
