@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +23,9 @@ import tr.com.ias.entity.iasHtmlTextField;
 @RequestMapping(value = "/component")
 public class ComponentController {
 
+	@Autowired
+	private ServletContext servletContext;
+
 	@RequestMapping(value = "/generate", method = RequestMethod.GET)
 	public ResponseEntity<?> generateRandomComponent() {
 		int componentCount = ThreadLocalRandom.current().nextInt(1, 10 + 1);
@@ -28,6 +34,10 @@ public class ComponentController {
 		return new ResponseEntity<>(componentList, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/context", method = RequestMethod.GET)
+	public ResponseEntity<?> getContextPath() {
+		return new ResponseEntity<>(servletContext.getServerInfo(), HttpStatus.OK);
+	}
 
 	public void generateComponent(int componentCount, List<iasHtmlComponent> componentList) {
 
@@ -85,7 +95,7 @@ public class ComponentController {
 		textField.setTextArea("TextArea " + textFieldIdentifier);
 		textField.setX(textFieldIdentifier * 3);
 		textField.setZ(textFieldIdentifier * 3);
-		textField.setY(textFieldIdentifier	 * 3);
+		textField.setY(textFieldIdentifier * 3);
 		return textField;
 	}
 
