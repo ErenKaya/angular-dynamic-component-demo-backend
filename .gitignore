@@ -70,6 +70,12 @@ yarn-error.log
 testem.log
 /typings
 
+*/.vscode/
+*.yarn.lock
+*/node_modules/
+*package-lock.json
+
+
 # System Files
 .DS_Store
 Thumbs.db
