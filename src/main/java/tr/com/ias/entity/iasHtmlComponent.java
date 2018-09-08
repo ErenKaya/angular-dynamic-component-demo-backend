@@ -4,7 +4,6 @@ public abstract class iasHtmlComponent {
 
 	protected String caption;
 	protected int x;
-	protected int z;
 	protected int y;
 	protected ComponentType componentType;
 
@@ -28,14 +27,6 @@ public abstract class iasHtmlComponent {
 		this.x = x;
 	}
 
-	public int getZ() {
-		return z;
-	}
-
-	public void setZ(int z) {
-		this.z = z;
-	}
-
 	public int getY() {
 		return y;
 	}
@@ -43,5 +34,15 @@ public abstract class iasHtmlComponent {
 	public void setY(int y) {
 		this.y = y;
 	}
+
+	public ComponentType getComponentType() {
+		return componentType;
+	}
+
+	public void setComponentType(ComponentType componentType) {
+		this.componentType = componentType;
+	}
+	
+	
 
 }

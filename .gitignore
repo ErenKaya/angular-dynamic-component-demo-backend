@@ -30,6 +30,8 @@ mvnw.cmd
 /.settings/
 *mvn/
 
+*/node_modules/
+
 /bin/
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
@@ -73,3 +75,10 @@ testem.log
 Thumbs.db
 
 
+front_end/dynamic-component/node_modules/*
+front_end/dynamic-component/angular.json
+front_end/dynamic-component/package.json
+front_end/dynamic-component/package-lock.json
+front_end/dynamic-component/tslint.json
+front_end/dynamic-component/tsconfig.json
+front_end/dynamic-component/.editorconfig
