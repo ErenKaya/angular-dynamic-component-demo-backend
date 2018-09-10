@@ -74,7 +74,7 @@ testem.log
 *.yarn.lock
 */node_modules/
 *package-lock.json
-src/main/resources/indecision-app/node_modules/
+front_end/indecision-app/node_modules/
 
 # System Files
 .DS_Store
