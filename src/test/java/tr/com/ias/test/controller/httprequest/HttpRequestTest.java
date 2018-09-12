@@ -1,4 +1,4 @@
-package tr.com.ias.test.controller;
+package tr.com.ias.test.controller.httprequest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,13 +7,23 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+
+import tr.com.ias.test.controller.httprequest.ignoretest.ConditionalIgnore;
+import tr.com.ias.test.controller.httprequest.ignoretest.ConditionalIgnoreRule;
 
 public class HttpRequestTest {
 	private String url;
 	private HttpURLConnection connection; 	
 	private final String USER_AGENT = "Mozilla/5.0";
 	URL urlObj ;
+	
+	@Rule
+	public ConditionalIgnoreRule rule = new ConditionalIgnoreRule();
+	
+
+	
 	@Before
 	public void init() throws Exception{
 		url = "http://localhost:8080/api/component/context";
@@ -21,11 +31,12 @@ public class HttpRequestTest {
 	}
 	
 	@Test
+	@ConditionalIgnore( condition = NotRunningServerOff.class )
 	public void test_generate_component_from_dummy_request() throws IOException {
 		connection = (HttpURLConnection)urlObj.openConnection();
 		connection.setRequestMethod("GET");
+		connection.setRequestProperty("User-Agent", USER_AGENT);
 		printResponse(connection);
-		
 	}
 
 	private void printResponse(HttpURLConnection connection) throws IOException {
