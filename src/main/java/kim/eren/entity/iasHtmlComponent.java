@@ -1,4 +1,4 @@
-package tr.com.ias.entity;
+package kim.eren.entity;
 
 public abstract class iasHtmlComponent {
 

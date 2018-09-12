@@ -1,4 +1,4 @@
-package tr.com.ias.test.controller.httprequest.ignoretest;
+package kim.eren.test.controller.httprequest.ignoretest;
 
 import java.io.IOException;
 import java.net.ConnectException;

@@ -1,4 +1,4 @@
-package tr.com.ias;
+package kim.eren;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

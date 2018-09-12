@@ -1,5 +1,5 @@
 
-package tr.com.ias.controller;
+package kim.eren.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import tr.com.ias.entity.ComponentType;
-import tr.com.ias.entity.iasHtmlButton;
-import tr.com.ias.entity.iasHtmlComponent;
-import tr.com.ias.entity.iasHtmlLabel;
-import tr.com.ias.entity.iasHtmlTextField;
-import tr.com.ias.entity.table.iasHtmlTable;
-import tr.com.ias.entity.table.iasHtmlTableColumn;
-import tr.com.ias.entity.table.iasHtmlTableRow;
+import kim.eren.entity.ComponentType;
+import kim.eren.entity.iasHtmlButton;
+import kim.eren.entity.iasHtmlComponent;
+import kim.eren.entity.iasHtmlLabel;
+import kim.eren.entity.iasHtmlTextField;
+import kim.eren.entity.table.iasHtmlTable;
+import kim.eren.entity.table.iasHtmlTableColumn;
+import kim.eren.entity.table.iasHtmlTableRow;
 
 @RestController
 @RequestMapping(value = "/component")

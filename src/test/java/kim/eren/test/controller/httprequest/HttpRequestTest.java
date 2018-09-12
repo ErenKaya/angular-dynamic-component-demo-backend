@@ -1,4 +1,4 @@
-package tr.com.ias.test.controller.httprequest;
+package kim.eren.test.controller.httprequest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import tr.com.ias.test.controller.httprequest.ignoretest.ConditionalIgnore;
-import tr.com.ias.test.controller.httprequest.ignoretest.ConditionalIgnoreRule;
+import kim.eren.test.controller.httprequest.ignoretest.ConditionalIgnore;
+import kim.eren.test.controller.httprequest.ignoretest.ConditionalIgnoreRule;
 
 public class HttpRequestTest {
 	private String url;

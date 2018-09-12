@@ -1,4 +1,4 @@
-package tr.com.ias.entity.table;
+package kim.eren.entity.table;
 
 import java.util.List;
 

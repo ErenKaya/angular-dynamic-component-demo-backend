@@ -1,4 +1,4 @@
-package tr.com.ias.entity;
+package kim.eren.entity;
 
 public class iasHtmlButton extends iasHtmlComponent {
 

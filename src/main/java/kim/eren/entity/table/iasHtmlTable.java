@@ -1,9 +1,9 @@
-package tr.com.ias.entity.table;
+package kim.eren.entity.table;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import tr.com.ias.entity.iasHtmlComponent;
+import kim.eren.entity.iasHtmlComponent;
 
 public class iasHtmlTable extends iasHtmlComponent {
 	private List<iasHtmlTableColumn> columns;

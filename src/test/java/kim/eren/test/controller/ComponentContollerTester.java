@@ -1,4 +1,4 @@
-package tr.com.ias.test.controller;
+package kim.eren.test.controller;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import tr.com.ias.controller.ComponentController;
-import tr.com.ias.entity.iasHtmlComponent;
+import kim.eren.controller.ComponentController;
+import kim.eren.entity.iasHtmlComponent;
 
 
 
