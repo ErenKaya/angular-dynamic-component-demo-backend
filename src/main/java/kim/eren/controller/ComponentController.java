@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,7 @@ import kim.eren.entity.table.iasHtmlTableRow;
 @RestController
 @RequestMapping(value = "/component")
 public class ComponentController {
+	
 	@Autowired
 	private ServletContext servletContext;
 
@@ -52,7 +54,8 @@ public class ComponentController {
 	 */
 	@RequestMapping(value = "/generate/{componentId}", method = RequestMethod.GET)
 	@CrossOrigin
-	public ResponseEntity<?> generateComponentCont(@PathVariable("componentId") int componentType) {
+	public ResponseEntity<?> generateComponentCont(@PathVariable("componentId") int componentType,
+			HttpServletRequest request) {
 		try {
 			ComponentType componentTypeOrg = ComponentType.values()[componentType];
 			switch (componentTypeOrg) {

@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AngularDynamicComponentApplication {
+public class DynamicComponentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AngularDynamicComponentApplication.class, args);
+		SpringApplication.run(DynamicComponentApplication.class, args);
 	}
 }
