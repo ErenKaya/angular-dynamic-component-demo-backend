@@ -1,4 +1,4 @@
-package kim.eren.test.controller;
+package kim.eren.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

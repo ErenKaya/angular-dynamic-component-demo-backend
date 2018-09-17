@@ -1,22 +1,15 @@
-package kim.eren.test.controller;
+package kim.eren.controller;
 
 import static org.junit.Assert.assertNotNull;
 
-import java.util.ArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
-
-import kim.eren.controller.ComponentController;
-import kim.eren.entity.iasHtmlComponent;
-
-
 
 
 public class ComponentContollerTester {
 	ComponentController controller;
 
-	@Before
+	@Before	
 	public void init() {
 		controller = new ComponentController();
 	}

@@ -1,5 +1,6 @@
-package kim.eren.test.controller.httprequest.ignoretest;
+package kim.eren.controller.httprequest.ignoretest;
 
+import java.io.IOException;
 import java.lang.reflect.Modifier;
 
 import org.junit.Assume;
@@ -10,7 +11,7 @@ import org.junit.runners.model.Statement;
 public class ConditionalIgnoreRule implements MethodRule {
 
 	@Override
-	public Statement apply(Statement base, FrameworkMethod method, Object target) {
+	public Statement apply(Statement base, FrameworkMethod method, Object target){
 		Statement result = base;
 		if (hasConditionalIgnoreAnnotation(method)) {
 			IgnoreCondition condition = getIgnoreContition(target, method);
