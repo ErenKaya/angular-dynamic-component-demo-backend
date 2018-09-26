@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import kim.eren.entity.ComponentType;
@@ -79,9 +81,9 @@ public class ComponentController {
 
 	}
 
-	@RequestMapping(value = "/context", method = RequestMethod.GET)
+	@RequestMapping(value = "/context", method = RequestMethod.POST)
 	public ResponseEntity<?> getContextPath() {
-		return new ResponseEntity<>(servletContext.getServerInfo(), HttpStatus.OK);
+		return new ResponseEntity<>(servletContext.getServerInfo() , HttpStatus.OK);
 	}
 
 	private iasHtmlTable generateTable() {
